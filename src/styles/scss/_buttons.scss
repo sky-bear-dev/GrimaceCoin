@@ -1,0 +1,192 @@
+.btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: normal;
+	align-items: center;
+	flex-wrap: wrap;
+	cursor: pointer;
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	line-height: 1;
+	appearance: none;
+	text-decoration: none;
+	font-weight: 700;
+	padding: 1.2em 2.8em;
+	border-radius: 8px;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		outline: 0;
+	}
+
+	&-md {
+		padding-top: 23px;
+		padding-bottom: 23px;
+	}
+
+	&-full {
+		width: 100%;
+	}
+
+	&-primary {
+		background-color: #772eda;
+	}
+
+	&-secondary {
+		justify-content: center;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid #772eda;
+		transition: all .3s;
+
+		&:hover {
+			background-color: #772eda;
+			color: #ffffff;
+		}
+	}
+}
+
+.btn-blob {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+  $numOfBlobs: 4;
+	padding-left: 25px;
+	padding-right: 25px;
+  z-index: 1;
+	color: #772eda;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius:9px;
+  
+  &:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: 100%;
+    border: 1px solid #5926ac;
+    border-radius:9px;
+  }
+  
+  &:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: $borderW*1.5;
+    top: $borderW*1.5;
+    width: 100%;
+    height: 100%;
+
+    transition: all 0.3s 0.2s;
+    border-radius:9px;
+  }
+  
+  &:hover {
+    color: $dark;
+    border-radius:9px;
+    
+    &:after {
+      transition: all 0.3s;
+      left: 0;
+      top: 0;
+      border-radius:9px;
+    }
+  }
+  
+  &__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+		color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius:7px;
+    background:transparent;
+  }
+  
+  &__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+  }
+  
+  &__blob {
+    position: absolute;
+    top: $borderW;
+    width: 100% / $numOfBlobs;
+    height: 100%;
+    background: #5926ac;
+    border-radius: 100%;
+    transform: translate3d(0,150%,0) scale(1.7);
+    transition: transform 0.45s;
+    
+    @supports(filter: url('#goo')) {
+      transform: translate3d(0,150%,0) scale(1.5);
+    }
+    
+    @for $i from 1 through $numOfBlobs {
+      &:nth-child(#{$i}) {
+        left: ($i - 1) * (120% / $numOfBlobs);
+        transition-delay: ($i - 1) * 0.08s;
+      }
+    }
+    
+    .btn-blob:hover & {
+      transform: translateZ(0) scale(1.7);
+      
+      @supports(filter: url('#goo')) {
+        transform: translateZ(0) scale(1.5);
+      }
+    }
+  }
+  
+}
+
+.wallet-connect-btn {
+	border-radius: 29px;
+	font-size: 14px;
+	font-weight: 700;
+	border: 2px solid #ffffff;
+	text-transform: none;
+	letter-spacing: unset;
+	padding: 15px 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	cursor: pointer;
+	margin-left: 1rem;
+	transition: all .3s;
+	position: relative;
+
+	&:hover {
+		background-color: #511597;
+		color: #ffffff;
+	}
+}
+
+.connect-or-swap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #772eda;
+	font-size: 16px;
+	font-weight: 600;
+	font-family: "Montserrat", sans-serif;
+	border-radius: 9px;
+}
