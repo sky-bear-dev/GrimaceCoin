@@ -4,6 +4,7 @@ import Option from '@mui/joy/Option';
 
 import Image from 'next/image';
 
+
 const FROM_DROPDOWN_LIST = [
   { text: 'Ethereum', iconUrl: '/assets/imgs/eth-circle-logo.svg', val: 'ETH' },
   { text: 'Binance-Smart-Chain', iconUrl: '/assets/imgs/bscLogo.svg', val: 'BSC' },
@@ -44,6 +45,7 @@ export default function Form() {
                   [`&.${selectClasses.expanded}`]: {
                     transform: 'rotate(-180deg)',
                   },
+                  minHeight: 59,
                 },
               }}
               slotProps={{
@@ -78,6 +80,7 @@ export default function Form() {
                   [`&.${selectClasses.expanded}`]: {
                     transform: 'rotate(-180deg)',
                   },
+                  minHeight: 59,
                 },
               }}
               slotProps={{

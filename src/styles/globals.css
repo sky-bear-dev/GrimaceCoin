@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Grimace';  
+  src: url('/fonts/Grimace-regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';  
+  src: url('/fonts/Montserrat-Bold.ttf');
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -14,10 +24,6 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;

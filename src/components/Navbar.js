@@ -4,9 +4,10 @@ import NavItem from "@/components/NavItem";
 import { useRouter } from "next/router";
 
 const MENU_LIST = [
-  { text: "Locker", href: "/locker" },
+  { text: "Staking Club", href: "/pools" },
+  { text: "Bridge", href: "/" },
+  { text: "LP Locker", href: "/locker" },
   { text: "NFT Staking", href: "/staking" },
-  { text: "Pools", href: "/pools" },
 ];
 
 const Navbar = (props) => {	

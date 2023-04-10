@@ -7,9 +7,6 @@ import TransitionEffect from '@/components/TransitionEffect'
 import '@/styles/globals.css'
 import styles from '@/styles/style.scss'
 
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-
 export default function App({ Component, pageProps }) {
   return (
     <>         

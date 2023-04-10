@@ -6,9 +6,9 @@ import SwipeForm from '@/components/SwipeForm'
 export default function Locker() {
   return (
     <>
-      <div className="page-title">
-        <Image src="/assets/imgs/grimace-locker.png" alt="bridge" width={423} height={80} />
-      </div>
+      <h1 className="page-title">
+        Grimace Locker
+      </h1>
 
       <Tabs>
         <TabList>

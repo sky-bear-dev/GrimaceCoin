@@ -3,9 +3,9 @@ import Image from 'next/image';
 export default function Staking() {
   return (
     <>
-      <div className="page-title">
-        <Image src="/assets/imgs/staking.png" alt="bridge" width={423} height={80} />
-      </div>
+      <h1 className="page-title">
+        NFT Staking
+      </h1>
 
       <div className='customer-wallet'>
         <div className='customer-wallet__balance'>
