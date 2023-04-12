@@ -1,26 +1,39 @@
-import CustomHead from '@/components/CustomHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Transition, TransitionGroup } from 'react-transition-group';
+import { play, exit } from '@/timelines'
 
-import TransitionEffect from '@/components/TransitionEffect'
+class App extends Component {
 
-import '@/styles/globals.css'
-import styles from '@/styles/style.scss'
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <Route render={({ location }) => {
+            const { pathname, key } = location;
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>         
-      <CustomHead />
-      <div className='App'></div>
-      <main>        
-        <Header />
-        <div className='content'>
-          <TransitionEffect>
-            <Component {...pageProps} />
-          </TransitionEffect>
+            return (
+              <TransitionGroup component={null}>
+                <Transition
+                  key={key}
+                  appear={true}
+                  onEnter={(node, appears) => play(pathname, node, appears)}
+                  onExit={(node, appears) => exit(node, appears)}
+                  timeout={{enter: 750, exit: 150}}
+                >
+                  <Switch location={location}>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/author" component={Author} />
+                    <Route path="/about" component={About} />
+                  </Switch>
+                </Transition>
+              </TransitionGroup>
+            )
+          }}/>
         </div>
-        <Footer />
-      </main>
-    </>
-  )    
+      </BrowserRouter>
+    )
+  }
 }
+  
+  export default App;
